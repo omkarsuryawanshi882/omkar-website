@@ -1,126 +1,299 @@
-<!DOCTYPE html>
-<html lang="mr">
+<!DOCTYPE html><html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omkar ची Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Omkar ची Website</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-            text-align: center;
-            padding: 20px;
-            margin: 0;
+<style>
+    * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        color: #222;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    /* Home */
+    .hero {
+        background: white;
+        padding: 45px 20px;
+        text-align: center;
+        border-radius: 25px;
+        margin-top: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .hero h1 {
+        color: #0d47a1;
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        color: #555;
+    }
+
+    .tag {
+        display: inline-block;
+        background: #e3f2fd;
+        color: #1565c0;
+        padding: 10px 18px;
+        border-radius: 30px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    /* Sections */
+    .section {
+        background: white;
+        margin-top: 20px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+    }
+
+    h2 {
+        color: #1565c0;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    /* Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .card {
+        background: #f1f7ff;
+        padding: 20px 10px;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 17px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Buttons */
+    .button {
+        display: inline-block;
+        background: #1565c0;
+        color: white;
+        padding: 13px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        margin: 6px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background: #0d47a1;
+    }
+
+    /* Contact */
+    input,
+    textarea {
+        width: 100%;
+        padding: 13px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    textarea {
+        height: 110px;
+        resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        color: white;
+        padding: 25px 10px;
+        font-size: 16px;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+
+        .hero h1 {
+            font-size: 30px;
         }
 
-        .box {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        h1 {
-            color: darkblue;
-        }
-
-        h2 {
-            color: #1565c0;
-        }
-
-        p {
+        .hero p {
             font-size: 18px;
         }
 
-        .card {
-            background: #f1f7ff;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 12px;
+        .cards {
+            grid-template-columns: 1fr;
         }
 
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        .section {
+            padding: 20px 15px;
         }
+    }
+</style>
 
-        textarea {
-            height: 100px;
-        }
-
-        button {
-            background: #1565c0;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-    </style>
-</head>
-
-<body>
-
-<div class="box">
-
+</head><body><div class="container"><!-- Home -->
+<div class="hero" id="home">
     <h1>🌐 Omkar ची Website</h1>
+
+    <p>👋 नमस्कार! मी Omkar.</p>
+
+    <p>
+        मी Web Development शिकत आहे
+        आणि माझं Goal एक चांगला Web Developer बनणे आहे.
+    </p>
+
+    <div class="tag">
+        🚀 Learning • Creating • Growing
+    </div>
+
+    <br><br>
+
+    <a href="#about" class="button">माझ्याबद्दल</a>
+    <a href="#contact" class="button">📩 Contact</a>
+</div>
+
+<!-- About -->
+<div class="section" id="about">
 
     <h2>👨‍💻 माझ्याबद्दल</h2>
 
-    <p>मी Web Development शिकत आहे.</p>
-    <p>माझं Goal एक चांगला Web Developer बनणे आहे.</p>
-    <p>🚀 Learning • Creating • Growing</p>
+    <p>
+        मला Website बनवणे आणि नवीन Technology शिकणे आवडते.
+    </p>
 
-    <h2>💻 माझे Skills</h2>
-
-    <div class="card">💻 Web Development</div>
-    <div class="card">🎬 Video Editing</div>
-    <div class="card">▶️ YouTube</div>
-
-    <h2>💼 माझ्या Services</h2>
-
-    <div class="card">🌐 Basic Website बनवणे</div>
-    <div class="card">🎨 Website Design</div>
-    <div class="card">📱 Mobile-Friendly Website</div>
-
-    <h2>🚀 माझे Projects</h2>
-
-    <div class="card">🌐 Omkar ची Personal Website</div>
-    <div class="card">💻 माझा Web Development Project</div>
-
-    <h2>📩 Contact Me</h2>
-
-    <p>Website बनवून घ्यायची असल्यास माझ्याशी संपर्क करा.</p>
-
-    <input type="text" placeholder="तुमचं नाव">
-    <br><br>
-
-    <input type="email" placeholder="तुमचा ई-मेल">
-    <br><br>
-
-    <textarea placeholder="तुमचा संदेश"></textarea>
-    <br><br>
-
-    <button>Send Message</button>
-
-    <br><br>
-
-    <a href="https://wa.me/919322054357" target="_blank">
-        <button>📱 WhatsApp वर संपर्क करा</button>
-    </a>
-
-    <hr>
-
-    <p>© 2026 Omkar | माझी Website</p>
-
-    <p>🚀 Learning • Creating • Growing</p>
+    <p>
+        माझं स्वप्न एक चांगला Web Developer बनण्याचं आहे.
+    </p>
 
 </div>
 
-</body>
-</html>
+<!-- Skills -->
+<div class="section">
+
+    <h2>💻 माझे Skills</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            💻<br>
+            <b>Web Development</b>
+        </div>
+
+        <div class="card">
+            🎬<br>
+            <b>Video Editing</b>
+        </div>
+
+        <div class="card">
+            ▶️<br>
+            <b>YouTube</b>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Services -->
+<div class="section">
+
+    <h2>💼 माझ्या Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            🌐<br>
+            Basic Website
+        </div>
+
+        <div class="card">
+            🎨<br>
+            Website Design
+        </div>
+
+        <div class="card">
+            📱<br>
+            Mobile-Friendly Website
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Projects -->
+<div class="section">
+
+    <h2>🚀 माझे Projects</h2>
+
+    <div class="card">
+        🌐<br><br>
+        <b>Omkar ची Personal Website</b>
+    </div>
+
+    <br>
+
+    <div class="card">
+        💻<br><br>
+        <b>माझा Web Development Project</b>
+    </div>
+
+</div>
+
+<!-- Contact -->
+<div class="section" id="contact">
+
+    <h2>📩 Contact Me</h2>
+
+    <p>
+        Website बनवून घ्यायची असल्यास माझ्याशी संपर्क करा.
+    </p>
+
+    <input type="text" placeholder="तुमचं नाव">
+
+    <input type="email" placeholder="तुमचा ई-मेल">
+
+    <textarea placeholder="तुमचा संदेश"></textarea>
+
+    <a href="#" class="button">
+        Send Message
+    </a>
+
+    <br>
+
+    <a href="https://wa.me/919322054357"
+       target="_blank"
+       class="button">
+        📱 WhatsApp वर संपर्क करा
+    </a>
+
+</div>
+
+</div><footer>© 2026 Omkar | माझी Website
+<br>
+🚀 Learning • Creating • Growing
+
+</footer></body>
+    </html>
