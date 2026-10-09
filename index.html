@@ -392,6 +392,39 @@ document.getElementById("contactForm").addEventListener("submit", function(event
     window.open("https://wa.me/" + phone + "?text=" + text, "_blank");
 });
 </script>
-
+<style>
+#welcome {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  color: gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  animation: welcomeFade 3s forwards;
+  pointer-events: none;
+}
+#welcome h1 {
+  font-size: 30px;
+  animation: welcomeZoom 1.5s ease;
+}
+#welcome p {
+  color: white;
+}
+@keyframes welcomeZoom {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes welcomeFade {
+  0%, 70% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+</style><div id="welcome">
+  <h1>🌟 Welcome to Omkar's Website 🌟</h1>
+  <p>Learning • Creating • Growing 🚀</p>
+</div>
+    
 </body>
 </html>
