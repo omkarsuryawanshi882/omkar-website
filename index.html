@@ -7,6 +7,22 @@
 <title>Omkar | Premium Website</title>
 
 <style>
+:root {
+    --bg: #080808;
+    --card: #151515;
+    --text: #f5f5f5;
+    --gold: #d4af37;
+    --border: #51431d;
+}
+
+body.light {
+    --bg: #fffdf5;
+    --card: #ffffff;
+    --text: #222222;
+    --gold: #9a7100;
+    --border: #d4af37;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,210 +32,187 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #080808;
-    color: #f5f5f5;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.7;
-}
-
-:root {
-    --gold: #d4af37;
-    --gold-light: #ffe9a3;
-    --black: #080808;
-    --card: #151515;
+    transition: background 0.4s, color 0.4s;
 }
 
 header {
     text-align: center;
-    padding: 28px 15px;
-    background: #101010;
+    padding: 25px 12px;
+    background: var(--card);
     border-bottom: 1px solid var(--gold);
 }
 
 header h1 {
     color: var(--gold);
-    font-size: 30px;
-}
-
-header p {
-    color: #ccc;
+    font-size: 29px;
 }
 
 nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: #111;
-    border-bottom: 1px solid #403719;
+    z-index: 10;
     text-align: center;
-    padding: 12px 5px;
+    padding: 12px 4px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
 }
 
 nav a {
     display: inline-block;
-    color: var(--gold-light);
+    color: var(--gold);
     text-decoration: none;
-    padding: 6px 9px;
-    font-size: 14px;
-    transition: 0.3s;
+    padding: 6px 8px;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: white;
+    color: var(--text);
+    text-shadow: 0 0 10px var(--gold);
+}
+
+#themeButton {
+    background: var(--gold);
+    color: #111;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
 }
 
 section {
     max-width: 1000px;
     margin: auto;
-    padding: 55px 18px;
-    scroll-margin-top: 65px;
+    padding: 50px 16px;
+    scroll-margin-top: 85px;
+    animation: fadeUp 0.8s ease both;
 }
 
 .hero {
     max-width: 100%;
     text-align: center;
-    padding: 85px 20px;
+    padding: 75px 18px;
     background: radial-gradient(
         circle at top,
-        #3b3011,
-        #111 55%,
-        #080808
+        #473812,
+        var(--bg) 75%
     );
-    border-bottom: 1px solid #403719;
+    border-bottom: 1px solid var(--border);
+}
+
+body.light .hero {
+    background: linear-gradient(135deg, #fff7d6, #ffffff);
 }
 
 .hero h2 {
-    font-size: 34px;
     color: var(--gold);
+    font-size: 32px;
     margin-bottom: 15px;
-    animation: appear 1s ease;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 .hero p {
     margin: 10px auto;
-    max-width: 600px;
+    max-width: 650px;
 }
 
-.gold-button {
+.title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 27px;
+    margin-bottom: 25px;
+}
+
+.button {
     display: inline-block;
-    background: linear-gradient(
-        135deg,
-        var(--gold-light),
-        var(--gold)
-    );
+    background: var(--gold);
     color: #111;
     text-decoration: none;
-    padding: 12px 22px;
-    margin: 12px 5px;
-    border-radius: 30px;
-    font-weight: bold;
     border: none;
+    padding: 12px 21px;
+    margin: 10px 4px;
+    border-radius: 28px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.gold-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 18px #d4af3766;
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #d4af3780;
 }
 
-.section-title {
-    text-align: center;
-    color: var(--gold);
-    font-size: 28px;
-    margin-bottom: 28px;
-}
-
-.about-box {
+.about,
+.card,
+.contact {
     background: var(--card);
-    border: 1px solid #4d401e;
+    border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 28px 20px;
-    text-align: center;
-    animation: appear 0.8s ease;
-}
-
-.about-box h3 {
-    color: var(--gold-light);
-    margin-bottom: 12px;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(210px, 1fr)
-    );
-    gap: 20px;
-}
-
-.card {
-    background: linear-gradient(145deg, #1b1b1b, #101010);
-    border: 1px solid #51431d;
     padding: 25px 18px;
-    border-radius: 15px;
     text-align: center;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+}
+
+.card:hover,
+.about:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #d4af3726;
     border-color: var(--gold);
-    box-shadow: 0 8px 25px #d4af371c;
 }
 
-.card .icon {
-    font-size: 36px;
-    margin-bottom: 8px;
+.icon {
+    font-size: 38px;
 }
 
-.card h3 {
+.card h3,
+.about h3 {
     color: var(--gold);
-    margin-bottom: 10px;
+    margin: 8px 0;
 }
 
-.contact-box {
+.contact {
     max-width: 600px;
     margin: auto;
-    background: var(--card);
-    border: 1px solid #51431d;
-    border-radius: 16px;
-    padding: 25px;
+    text-align: left;
 }
 
-.contact-box label {
+.contact label {
     display: block;
-    margin-top: 15px;
-    color: var(--gold-light);
+    margin-top: 12px;
 }
 
-.contact-box input,
-.contact-box textarea {
+.contact input,
+.contact textarea {
     width: 100%;
-    padding: 13px;
-    margin-top: 6px;
-    background: #080808;
-    color: white;
-    border: 1px solid #51431d;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid var(--border);
     border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
     font-size: 16px;
 }
 
-.contact-box textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.contact-box input:focus,
-.contact-box textarea:focus {
-    outline: 1px solid var(--gold);
+.contact textarea {
+    min-height: 110px;
 }
 
 footer {
     text-align: center;
-    background: #101010;
-    border-top: 1px solid #51431d;
     padding: 25px 12px;
-    color: #ccc;
+    background: var(--card);
+    border-top: 1px solid var(--gold);
 }
 
 footer strong {
@@ -228,19 +221,27 @@ footer strong {
 
 .whatsapp {
     position: fixed;
-    bottom: 16px;
-    right: 14px;
+    bottom: 15px;
+    right: 12px;
+    z-index: 20;
     background: #25d366;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    color: white;
     padding: 12px 15px;
     border-radius: 30px;
-    z-index: 200;
-    box-shadow: 0 3px 12px #000;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@keyframes appear {
+@keyframes glow {
+    from {
+        text-shadow: 0 0 4px #d4af3740;
+    }
+    to {
+        text-shadow: 0 0 18px #d4af37;
+    }
+}
+
+@keyframes fadeUp {
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -253,24 +254,20 @@ footer strong {
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 25px;
-    }
-
-    .hero {
-        padding: 60px 15px;
-    }
-
-    .hero h2 {
-        font-size: 27px;
+        font-size: 24px;
     }
 
     nav a {
         font-size: 12px;
-        padding: 6px;
+        padding: 5px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
     }
 
     section {
-        padding: 40px 14px;
+        padding: 35px 13px;
     }
 }
 </style>
@@ -280,7 +277,7 @@ footer strong {
 
 <header>
     <h1>👑 Omkar ची Website</h1>
-    <p>Learning • Creating • Growing</p>
+    <p>Learning • Creating • Growing 🚀</p>
 </header>
 
 <nav>
@@ -290,21 +287,21 @@ footer strong {
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <br>
+    <button id="themeButton" type="button">☀️ Light Mode</button>
 </nav>
 
 <section class="hero" id="home">
     <h2>नमस्कार! मी Omkar 👋</h2>
     <p>Welcome to My Premium Website</p>
-    <p>मी Web Development शिकत आहे आणि एक चांगला Web Developer बनण्याचे माझे ध्येय आहे.</p>
-
-    <a href="#about" class="gold-button">माझ्याबद्दल</a>
-    <a href="#contact" class="gold-button">Contact Me</a>
+    <p>मी Web Development शिकत आहे. माझं ध्येय एक चांगला Web Developer बनणे आहे.</p>
+    <a href="#about" class="button">माझ्याबद्दल</a>
+    <a href="#contact" class="button">Contact Me</a>
 </section>
 
 <section id="about">
-    <h2 class="section-title">👨‍💻 माझ्याबद्दल</h2>
-
-    <div class="about-box">
+    <h2 class="title">👨‍💻 माझ्याबद्दल</h2>
+    <div class="about">
         <h3>नमस्कार, मी Omkar!</h3>
         <p>मला Website बनवणे आणि नवीन Technology शिकणे आवडते.</p>
         <p>माझं स्वप्न एक चांगला Web Developer बनण्याचं आहे.</p>
@@ -313,21 +310,18 @@ footer strong {
 </section>
 
 <section id="skills">
-    <h2 class="section-title">💻 माझे Skills</h2>
-
+    <h2 class="title">💻 माझे Skills</h2>
     <div class="card-container">
         <div class="card">
             <div class="icon">💻</div>
             <h3>Web Development</h3>
             <p>Website आणि Coding शिकणे.</p>
         </div>
-
         <div class="card">
             <div class="icon">🎬</div>
             <h3>Video Editing</h3>
             <p>व्हिडिओ एडिटिंग आणि Content Creation.</p>
         </div>
-
         <div class="card">
             <div class="icon">▶️</div>
             <h3>YouTube</h3>
@@ -337,21 +331,18 @@ footer strong {
 </section>
 
 <section id="services">
-    <h2 class="section-title">💼 माझ्या Services</h2>
-
+    <h2 class="title">💼 माझ्या Services</h2>
     <div class="card-container">
         <div class="card">
             <div class="icon">🌐</div>
             <h3>Basic Website</h3>
             <p>साध्या Website तयार करण्याचा सराव.</p>
         </div>
-
         <div class="card">
             <div class="icon">🎨</div>
             <h3>Website Design</h3>
             <p>सुंदर आणि आकर्षक Website Design.</p>
         </div>
-
         <div class="card">
             <div class="icon">📱</div>
             <h3>Mobile-Friendly</h3>
@@ -361,15 +352,13 @@ footer strong {
 </section>
 
 <section id="projects">
-    <h2 class="section-title">🚀 माझे Projects</h2>
-
+    <h2 class="title">🚀 माझे Projects</h2>
     <div class="card-container">
         <div class="card">
             <div class="icon">🌐</div>
             <h3>Personal Website</h3>
             <p>माझी स्वतःची Website.</p>
         </div>
-
         <div class="card">
             <div class="icon">💻</div>
             <h3>Web Development</h3>
@@ -379,38 +368,21 @@ footer strong {
 </section>
 
 <section id="contact">
-    <h2 class="section-title">📩 Contact Me</h2>
-
-    <div class="contact-box">
-        <p>Website बद्दल बोलण्यासाठी खालील फॉर्म भरा.</p>
+    <h2 class="title">📩 Contact Me</h2>
+    <div class="contact">
+        <p>मला Message पाठवण्यासाठी माहिती भरा.</p>
 
         <form id="contactForm">
             <label for="name">तुमचं नाव</label>
-            <input
-                id="name"
-                type="text"
-                placeholder="तुमचं नाव लिहा"
-                required
-            >
+            <input id="name" type="text" required placeholder="तुमचं नाव">
 
             <label for="email">तुमचा ई-मेल</label>
-            <input
-                id="email"
-                type="email"
-                placeholder="तुमचा ई-मेल लिहा"
-                required
-            >
+            <input id="email" type="email" required placeholder="ई-मेल">
 
             <label for="message">तुमचा संदेश</label>
-            <textarea
-                id="message"
-                placeholder="तुमचा संदेश लिहा"
-                required
-            ></textarea>
+            <textarea id="message" required placeholder="तुमचा संदेश"></textarea>
 
-            <button type="submit" class="gold-button">
-                Send Message
-            </button>
+            <button class="button" type="submit">WhatsApp वर पाठवा</button>
         </form>
     </div>
 </section>
@@ -420,39 +392,48 @@ footer strong {
     <p>Made with ❤️ and Creativity</p>
 </footer>
 
-<a
-    class="whatsapp"
-    href="https://wa.me/919322054357"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    💚 WhatsApp
-</a>
+<a class="whatsapp"
+   href="https://wa.me/919322054357"
+   target="_blank"
+   rel="noopener noreferrer">💚 WhatsApp</a>
 
 <script>
-document.getElementById("contactForm").addEventListener(
-    "submit",
-    function(event) {
-        event.preventDefault();
+const themeButton = document.getElementById("themeButton");
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+function setTheme(theme) {
+    document.body.classList.toggle("light", theme === "light");
+    themeButton.textContent =
+        theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+    localStorage.setItem("omkarTheme", theme);
+}
 
-        const phone = "919322054357";
+themeButton.addEventListener("click", function() {
+    const isLight = document.body.classList.contains("light");
+    setTheme(isLight ? "dark" : "light");
+});
 
-        const text =
-            "नमस्कार Omkar!%0A" +
-            "नाव: " + encodeURIComponent(name) + "%0A" +
-            "ई-मेल: " + encodeURIComponent(email) + "%0A" +
-            "संदेश: " + encodeURIComponent(message);
+const savedTheme = localStorage.getItem("omkarTheme") || "dark";
+setTheme(savedTheme);
 
-        const url = "https://wa.me/" + phone + "?text=" + text;
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        window.open(url, "_blank");
-    }
-);
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const phone = "919322054357";
+
+    const text = encodeURIComponent(
+        "नमस्कार Omkar!\n" +
+        "नाव: " + name + "\n" +
+        "ई-मेल: " + email + "\n" +
+        "संदेश: " + message
+    );
+
+    window.open("https://wa.me/" + phone + "?text=" + text, "_blank");
+});
 </script>
 
 </body>
-    </html>
+                                  </html>
