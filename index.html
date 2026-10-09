@@ -1,299 +1,427 @@
-<!DOCTYPE html><html lang="mr">
+<!DOCTYPE html>
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Omkar ची Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    * {
-        box-sizing: border-box;
-        scroll-behavior: smooth;
-    }
+    <title>Omkar ची Website</title>
 
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-        color: #222;
-    }
+    <meta name="description" content="Omkar ची Personal Website - Web Development, Video Editing आणि नवीन Skills.">
 
-    .container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    /* Home */
-    .hero {
-        background: white;
-        padding: 45px 20px;
-        text-align: center;
-        border-radius: 25px;
-        margin-top: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4ff;
+            color: #222;
+            line-height: 1.6;
+        }
 
-    .hero h1 {
-        color: #0d47a1;
-        font-size: 38px;
-        margin-bottom: 10px;
-    }
+        header {
+            background: #101a3a;
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+        }
 
-    .hero p {
-        font-size: 20px;
-        color: #555;
-    }
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
 
-    .tag {
-        display: inline-block;
-        background: #e3f2fd;
-        color: #1565c0;
-        padding: 10px 18px;
-        border-radius: 30px;
-        margin-top: 10px;
-        font-weight: bold;
-    }
+        nav {
+            background: #162858;
+            padding: 12px 5px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Sections */
-    .section {
-        background: white;
-        margin-top: 20px;
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 7px 9px;
+            font-size: 14px;
+            font-weight: bold;
+        }
 
-    h2 {
-        color: #1565c0;
-        text-align: center;
-    }
+        nav a:hover {
+            color: #61dafb;
+        }
 
-    p {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: center;
-    }
+        section {
+            padding: 45px 18px;
+            max-width: 1000px;
+            margin: auto;
+            scroll-margin-top: 60px;
+        }
 
-    /* Cards */
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
+        .hero {
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+            max-width: 100%;
+            padding: 70px 20px;
+            text-align: center;
+        }
 
-    .card {
-        background: #f1f7ff;
-        padding: 20px 10px;
-        border-radius: 15px;
-        text-align: center;
-        font-size: 17px;
-        transition: 0.3s;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Buttons */
-    .button {
-        display: inline-block;
-        background: #1565c0;
-        color: white;
-        padding: 13px 22px;
-        border-radius: 12px;
-        text-decoration: none;
-        margin: 6px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .button:hover {
-        background: #0d47a1;
-    }
-
-    /* Contact */
-    input,
-    textarea {
-        width: 100%;
-        padding: 13px;
-        margin: 8px 0;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        font-size: 16px;
-    }
-
-    textarea {
-        height: 110px;
-        resize: vertical;
-    }
-
-    /* Footer */
-    footer {
-        text-align: center;
-        color: white;
-        padding: 25px 10px;
-        font-size: 16px;
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-
-        .hero h1 {
-            font-size: 30px;
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 17px;
+            margin-bottom: 20px;
         }
 
-        .cards {
-            grid-template-columns: 1fr;
+        .button {
+            display: inline-block;
+            background: #ffd43b;
+            color: #172554;
+            padding: 12px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
         }
 
-        .section {
-            padding: 20px 15px;
+        .button:hover {
+            background: white;
+            transform: translateY(-2px);
         }
-    }
-</style>
 
-</head><body><div class="container"><!-- Home -->
-<div class="hero" id="home">
-    <h1>🌐 Omkar ची Website</h1>
+        .section-title {
+            text-align: center;
+            color: #173a8a;
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
 
-    <p>👋 नमस्कार! मी Omkar.</p>
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
 
-    <p>
-        मी Web Development शिकत आहे
-        आणि माझं Goal एक चांगला Web Developer बनणे आहे.
-    </p>
+        .card {
+            background: white;
+            padding: 24px 18px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
 
-    <div class="tag">
-        🚀 Learning • Creating • Growing
-    </div>
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-    <br><br>
+        .card h3 {
+            color: #1d4ed8;
+            margin-bottom: 10px;
+        }
 
-    <a href="#about" class="button">माझ्याबद्दल</a>
-    <a href="#contact" class="button">📩 Contact</a>
-</div>
+        .about-text {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
 
-<!-- About -->
-<div class="section" id="about">
+        .contact-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
 
-    <h2>👨‍💻 माझ्याबद्दल</h2>
+        .contact-box label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
 
-    <p>
-        मला Website बनवणे आणि नवीन Technology शिकणे आवडते.
-    </p>
+        .contact-box input,
+        .contact-box textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
 
-    <p>
-        माझं स्वप्न एक चांगला Web Developer बनण्याचं आहे.
-    </p>
+        .contact-box textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
 
-</div>
+        .contact-box button {
+            margin-top: 18px;
+        }
 
-<!-- Skills -->
-<div class="section">
+        footer {
+            background: #101a3a;
+            color: white;
+            text-align: center;
+            padding: 22px 10px;
+        }
 
-    <h2>💻 माझे Skills</h2>
+        .whatsapp {
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            background: #25d366;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 3px 10px #999;
+            z-index: 1001;
+        }
 
-    <div class="cards">
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
 
-        <div class="card">
-            💻<br>
-            <b>Web Development</b>
+            nav a {
+                padding: 6px;
+                font-size: 12px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            section {
+                padding: 35px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌐 Omkar ची Website</h1>
+        <p>Learning • Creating • Growing 🚀</p>
+    </header>
+
+    <nav>
+        <a href="#home">🏠 Home</a>
+        <a href="#about">👨‍💻 About</a>
+        <a href="#skills">💻 Skills</a>
+        <a href="#services">🛠️ Services</a>
+        <a href="#projects">🚀 Projects</a>
+        <a href="#contact">📩 Contact</a>
+    </nav>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <h2>नमस्कार! 🙏 स्वागत आहे!</h2>
+        <p>मी Omkar आहे. मी Web Development शिकत आहे.</p>
+        <p>माझं ध्येय एक चांगला Web Developer बनणे आहे.</p>
+
+        <a href="#about" class="button">माझ्याबद्दल जाणून घ्या</a>
+        <a href="#contact" class="button">Contact Me</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">👨‍💻 About Me</h2>
+
+        <div class="about-text">
+            <h3>नमस्कार, मी Omkar! 👋</h3>
+            <p>
+                मी नवीन Skills शिकत आहे आणि स्वतःची Website तयार करत आहे.
+            </p>
+            <p>
+                मला Web Development, Video Editing आणि YouTube मध्ये आवड आहे.
+            </p>
+            <p>
+                माझं Goal एक चांगली Website बनवणे आणि नवीन गोष्टी शिकणे आहे.
+            </p>
+            <br>
+            <strong>🚀 Learning • Creating • Growing</strong>
         </div>
+    </section>
 
-        <div class="card">
-            🎬<br>
-            <b>Video Editing</b>
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">💻 My Skills</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>💻 Web Development</h3>
+                <p>Website तयार करणे आणि Coding शिकणे.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎬 Video Editing</h3>
+                <p>व्हिडिओ एडिटिंग आणि नवीन Editing Skills शिकणे.</p>
+            </div>
+
+            <div class="card">
+                <h3>▶️ YouTube</h3>
+                <p>व्हिडिओ तयार करणे आणि Content Creation शिकणे.</p>
+            </div>
+
         </div>
+    </section>
 
-        <div class="card">
-            ▶️<br>
-            <b>YouTube</b>
+    <!-- SERVICES -->
+    <section id="services">
+        <h2 class="section-title">🛠️ My Services</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>🌐 Website Design</h3>
+                <p>साध्या आणि सुंदर Website तयार करण्याचा सराव.</p>
+            </div>
+
+            <div class="card">
+                <h3>🎥 Video Editing</h3>
+                <p>व्हिडिओ एडिटिंग आणि Content Creation.</p>
+            </div>
+
+            <div class="card">
+                <h3>📱 Digital Skills</h3>
+                <p>नवीन Digital Skills शिकणे आणि वापरणे.</p>
+            </div>
+
         </div>
+    </section>
 
-    </div>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">🚀 My Projects</h2>
 
-</div>
+        <div class="card-container">
 
-<!-- Services -->
-<div class="section">
+            <div class="card">
+                <h3>🌐 My Personal Website</h3>
+                <p>ही माझी स्वतःची Website आहे.</p>
+                <a href="#home" class="button">Website पाहा</a>
+            </div>
 
-    <h2>💼 माझ्या Services</h2>
+            <div class="card">
+                <h3>💡 My Learning Journey</h3>
+                <p>मी रोज नवीन Skills शिकण्याचा प्रयत्न करतो.</p>
+            </div>
 
-    <div class="cards">
+            <div class="card">
+                <h3>🎯 My Goal</h3>
+                <p>एक चांगला Web Developer बनणे.</p>
+            </div>
 
-        <div class="card">
-            🌐<br>
-            Basic Website
         </div>
+    </section>
 
-        <div class="card">
-            🎨<br>
-            Website Design
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">📩 Contact Me</h2>
+
+        <div class="contact-box">
+
+            <p>मला Message पाठवण्यासाठी खाली माहिती भरा.</p>
+
+            <form id="contactForm">
+
+                <label for="name">तुमचं नाव:</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="तुमचं नाव लिहा"
+                    required
+                >
+
+                <label for="email">ई-मेल:</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="तुमचा ई-मेल लिहा"
+                    required
+                >
+
+                <label for="message">Message:</label>
+                <textarea
+                    id="message"
+                    placeholder="तुमचा Message लिहा"
+                    required
+                ></textarea>
+
+                <button type="submit" class="button">
+                    WhatsApp वर Message पाठवा
+                </button>
+
+            </form>
+
         </div>
+    </section>
 
-        <div class="card">
-            📱<br>
-            Mobile-Friendly Website
-        </div>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Omkar | माझी Website 🌐</p>
+        <p>Made with ❤️ by Omkar</p>
+    </footer>
 
-    </div>
-
-</div>
-
-<!-- Projects -->
-<div class="section">
-
-    <h2>🚀 माझे Projects</h2>
-
-    <div class="card">
-        🌐<br><br>
-        <b>Omkar ची Personal Website</b>
-    </div>
-
-    <br>
-
-    <div class="card">
-        💻<br><br>
-        <b>माझा Web Development Project</b>
-    </div>
-
-</div>
-
-<!-- Contact -->
-<div class="section" id="contact">
-
-    <h2>📩 Contact Me</h2>
-
-    <p>
-        Website बनवून घ्यायची असल्यास माझ्याशी संपर्क करा.
-    </p>
-
-    <input type="text" placeholder="तुमचं नाव">
-
-    <input type="email" placeholder="तुमचा ई-मेल">
-
-    <textarea placeholder="तुमचा संदेश"></textarea>
-
-    <a href="#" class="button">
-        Send Message
+    <!-- WHATSAPP BUTTON -->
+    <a
+        class="whatsapp"
+        href="https://wa.me/919322054357"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💚 WhatsApp
     </a>
 
-    <br>
+    <script>
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
 
-    <a href="https://wa.me/919322054357"
-       target="_blank"
-       class="button">
-        📱 WhatsApp वर संपर्क करा
-    </a>
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
 
-</div>
+                if (!name || !email || !message) {
+                    alert("कृपया सर्व माहिती भरा.");
+                    return;
+                }
 
-</div><footer>© 2026 Omkar | माझी Website
-<br>
-🚀 Learning • Creating • Growing
+                const phoneNumber = "919322054357";
 
-</footer></body>
-</html>
+                const text =
+                    "नमस्कार Omkar!%0A" +
+                    "नाव: " + encodeURIComponent(name) + "%0A" +
+                    "ई-मेल: " + encodeURIComponent(email) + "%0A" +
+                    "Message: " + encodeURIComponent(message);
+
+                const whatsappURL =
+                    "https://wa.me/" + phoneNumber + "?text=" + text;
+
+                window.open(whatsappURL, "_blank");
+            }
+        );
+    </script>
+
+</body>
+                    </html>
